@@ -1,27 +1,64 @@
-# 🧾 List Comprehension:Generates all even numbers between 200 and 300
-## 🎯 AIM:
-To write a Python class-based program that generates all even numbers between 200 and 300 using **list comprehension**, and stores them in a list.
+##  AIM:
+Write a Python Program to find whether the given matrix is sparse matrix
+
 
 ---
 
-## 🧠 ALGORITHM:
+##  ALGORITHM:
+Start
 
-1. **Start**
-2. Create a class named `program`
-3. Create variables `a`, `b`, and `c` to represent:
-   - `a`: Lower limit
-   - `b`: Step value
-   - `c`: Upper limit
-4. Initialize the values using a constructor `__init__`
-5. Define a method `display()` that uses **list comprehension** to store even numbers
-6. Print the resulting list of even numbers
-7. **Stop**
+Define the problem to be solved.
 
----
+Identify the inputs required.
 
-## 💻 PROGRAM:
-Add Code Here
+Identify the process/steps needed to solve the problem.
 
+Identify the outputs to be produced.
+
+Write the steps in logical order:
+
+Accept input.
+
+Perform the necessary computations or processing.
+
+Produce and display the output.
+
+Stop
+
+##  PROGRAM:
+```
+
+def read_matrix(n):
+    matrix = [[0]*n for row in range(n)]
+    for i in range(n):
+        lines = list(map(int, input().split()))
+        for j in range(n):
+            matrix[i][j] = lines[j]
+    return matrix
+def print_matrix(M):
+    print("Matrix:")
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            print(M[i][j],end=" ")
+        print()
+def check_sparse(M):
+    count=0
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            if(M[i][j]==0):
+                count+=1
+    if(count > ((len(M)*len(M))//2)):
+        print(True)
+    else:
+        print(False)
+n=int(input())
+M=read_matrix(n)
+print_matrix(M)
+check_sparse(M)
+
+```
 ## OUTPUT:
+<img width="350" height="523" alt="image" src="https://github.com/user-attachments/assets/a13a8ebe-0454-4912-8c6e-c98b89fe1b10" />
 
 ## RESULT:
+The Program was executed successfully
